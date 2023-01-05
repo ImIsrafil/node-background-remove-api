@@ -14,6 +14,13 @@ const config = {
   port: 5000,
 };
 
+if (!fs.existsSync(path.join(__dirname, "images"))) {
+  fs.mkdirSync(path.join(__dirname, "images"));
+}
+if (!fs.existsSync(path.join(__dirname, "uploads"))) {
+  fs.mkdirSync(path.join(__dirname, "uploads"));
+}
+
 app.use(cors());
 app.use("/images", express.static("/images"));
 
